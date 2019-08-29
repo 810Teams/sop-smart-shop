@@ -28,3 +28,4 @@ hs_err_pid*
 # Additional Project Files
 .idea/
 test/
+*.iml
