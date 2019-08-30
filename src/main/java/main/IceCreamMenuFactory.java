@@ -33,20 +33,21 @@ public class IceCreamMenuFactory {
             }, 210),
     };
 
-    public IceCreamMenuFactory() {
+    public static IceCreamMenu viewIceCreamMenu(int menu) {
+        return (IceCreamMenu) ICE_CREAM_MENUS[menu];
     }
 
-    public IceCreamMenu createIceCreamMenu(int menu) throws CloneNotSupportedException {
+    public static IceCreamMenu[] viewIceCreamMenuList() {
+        return ICE_CREAM_MENUS;
+    }
+
+    public static IceCreamMenu getIceCreamMenu(int menu) throws CloneNotSupportedException {
         return (IceCreamMenu) ICE_CREAM_MENUS[menu].clone();
     }
 
-    public IceCreamMenu createIceCreamMenu(int menu, IceCreamScoop[] customScoops) throws CloneNotSupportedException {
+    public static IceCreamMenu getIceCreamMenu(int menu, IceCreamScoop[] customScoops) throws CloneNotSupportedException {
         IceCreamMenu newIceCreamMenu = (IceCreamMenu) ICE_CREAM_MENUS[menu].clone();
         newIceCreamMenu.setScoops(customScoops);
         return newIceCreamMenu;
-    }
-
-    public IceCreamMenu[] viewIceCreamMenuList() {
-        return IceCreamMenuFactory.ICE_CREAM_MENUS;
     }
 }

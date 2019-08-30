@@ -1,7 +1,7 @@
 package main;
 
 public class IceCreamMenu implements Cloneable {
-    public static final double DEFAULT_PRICE = 175;
+    private static final double DEFAULT_PRICE = 175;
     private String name;
     private String details;
     private IceCreamScoop[] scoops;
