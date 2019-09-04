@@ -2,15 +2,15 @@
  * `SpringBootApp`
  *  Main class for running
  *
- *  127.0.0.1:8000/shop
+ *  127.0.0.1:8080/shop
  *      - to view shop page, containing ice cream menus.
- *  127.0.0.1:8000/shop/{menu}
+ *  127.0.0.1:8080/shop/{menu}
  *      - to view a specific ice cream menu.
- *  127.0.0.1:8000/shop/{menu}/order`
+ *  127.0.0.1:8080/shop/{menu}/order
  *      - to order a specific ice cream menu, this will add an ice cream menu to the cart
- *  127.0.0.1:8000/cart
+ *  127.0.0.1:8080/cart
  *      - to view the cart.
- *  127.0.0.1:8000/checkout
+ *  127.0.0.1:8080/checkout
  *      - to checkout your items in the cart
  */
 
