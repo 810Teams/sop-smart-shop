@@ -1,4 +1,4 @@
-package main;
+package core;
 
 public class IceCreamMenuFactory {
     public static final IceCreamMenu[] ICE_CREAM_MENUS = new IceCreamMenu[]{

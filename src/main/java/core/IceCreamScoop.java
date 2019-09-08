@@ -1,8 +1,8 @@
-package main;
+package core;
 
-import java.util.Arrays;
+import java.io.Serializable;
 
-public class IceCreamScoop {
+public class IceCreamScoop implements Serializable {
     public static final String[] FLAVOR_NAMES = new String[]{
             "(Any)",
             "Blueberry Cheesecake",

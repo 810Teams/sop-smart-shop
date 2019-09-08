@@ -1,6 +1,8 @@
 /**
  * `SpringBootApp`
  *  Main class for running
+ *  @author Teerapat Kraisrisirikul
+ *  @version 0.2.0
  *
  *  127.0.0.1:8080/shop
  *      - to view shop page, containing ice cream menus.
@@ -16,18 +18,23 @@
 
 package main;
 
+import core.IceCreamMenu;
+import core.IceCreamMenuFactory;
+import core.IceCreamMenuList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import util.StorageManager;
 
 import java.util.ArrayList;
 
 @SpringBootApplication
 @RestController
 public class SpringBootApp {
-    public static ArrayList<IceCreamMenu> CART = new ArrayList<IceCreamMenu>();
+    private static StorageManager STORAGE_MANAGER = new StorageManager();
+    private static IceCreamMenuList CART = STORAGE_MANAGER.readIceCreamMenuFile("cart.dat");
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootApp.class, args);
@@ -51,7 +58,8 @@ public class SpringBootApp {
     @RequestMapping(value = "/shop/{menu}/order")
     String orderIceCreamMenu(@PathVariable int menu) {
         try {
-            SpringBootApp.CART.add(IceCreamMenuFactory.getIceCreamMenu(menu));
+            SpringBootApp.CART.getList().add(IceCreamMenuFactory.getIceCreamMenu(menu));
+            STORAGE_MANAGER.writeIceCreamMenuFile("cart.dat", CART);
             return "Menu '" + IceCreamMenuFactory.viewIceCreamMenu(menu).getName() + "' successfully added to the cart.";
         } catch (CloneNotSupportedException ex) {
             return "Sorry, something went wrong while we're adding your menu to the cart. Please try again.";
@@ -60,16 +68,17 @@ public class SpringBootApp {
 
     @RequestMapping("/cart")
     ArrayList<IceCreamMenu> viewCart() {
-        return SpringBootApp.CART;
+        return SpringBootApp.CART.getList();
     }
 
     @RequestMapping("/checkout")
     String checkout() {
         double totalPrice = 0;
-        for (IceCreamMenu e : SpringBootApp.CART) {
+        for (IceCreamMenu e : SpringBootApp.CART.getList()) {
             totalPrice += e.getPrice();
         }
-        SpringBootApp.CART.clear();
+        SpringBootApp.CART.getList().clear();
+        STORAGE_MANAGER.writeIceCreamMenuFile("cart.dat", CART);
 
         return "Thank you for purchase total of " + Double.toString(totalPrice) + " THB.\n" +
                 "A delivery will now proceed right to your home.";

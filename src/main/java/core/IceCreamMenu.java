@@ -1,6 +1,8 @@
-package main;
+package core;
 
-public class IceCreamMenu implements Cloneable {
+import java.io.Serializable;
+
+public class IceCreamMenu implements Cloneable, Serializable {
     private static final double DEFAULT_PRICE = 175;
     private String name;
     private String details;
