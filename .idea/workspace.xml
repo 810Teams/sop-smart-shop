@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ed96f55-9fe0-4780-b632-7eb965a5435e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/IceCreamMenuList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/StorageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/IceCreamMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IceCreamMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/IceCreamMenuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IceCreamMenuFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/IceCreamScoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IceCreamScoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/IceCreamMenuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IceCreamMenuFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/SpringBootApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/SpringBootApp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,6 +108,7 @@
       <workItem from="1567389702811" duration="423000" />
       <workItem from="1567579125708" duration="22000" />
       <workItem from="1567928366893" duration="2908000" />
+      <workItem from="1568193624810" duration="290000" />
     </task>
     <servers />
   </component>
